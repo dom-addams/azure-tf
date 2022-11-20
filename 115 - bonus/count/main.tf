@@ -1,9 +1,3 @@
-# Provider
-provider "azurerm" {
-  version = "2.38.0"
-  features {}
-}
-
 # Variable List with 3 rg names
 variable "rg_names" {
   type    = list(string)

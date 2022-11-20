@@ -1,9 +1,3 @@
-# Provider
-provider "azurerm" {
-  version = "2.38.0"
-  features {}
-}
-
 resource "azurerm_resource_group" "dependencies" {
   name = "dependencies-rg"
   location = "UK South"

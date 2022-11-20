@@ -1,8 +1,5 @@
-# Dynamic block v1 -- repeat with lists
-provider "azurerm" {
-  version = "2.38.0"
-  features {}
-}
+# Module blocks -- repeat with lists and iterate
+
 /*
 # Variable for Module 1
 variable "my_ports" {
@@ -95,51 +92,45 @@ module "nsg_rules_module_2" {
 }
 */
 
-
-
-### MODULE £ = WORK IN PROGRESS ###
+### MODULE REFERENCE LINKS ###
 # 1) https://github.com/Azure/terraform-azurerm-network-security-group/blob/master/variables.tf
 # 2) https://github.com/Azure/terraform-azurerm-network-security-group/blob/master/rules.tf
 # 3) https://github.com/Azure/terraform-azurerm-network-security-group/blob/master/modules/ActiveDirectory/main.tf
 # 4) https://github.com/Azure/terraform-azurerm-network-security-group/blob/master/main.tf 
 
-
-
-
-
 # NSG Module 3
-module "nsg_rules_module_4" {
-  source   = "./nsg - v3"
-  nsg_name = "nsg-three"
-  rg       = "terraform-resources-rg"
-  location = "UK South"
+# module "nsg_rules_module_3" {
+#   source   = "./nsg - v3"
+#   nsg_name = "nsg-three"
+#   rg       = "terraform-resources-rg"
+#   location = "UK South"
 
-  # Dynamic Block -- v4
-  # list to reference rule names   
-  predefined_rules = [
-    {
-      name = "http"
-    },
-    {
-      name = "https"
-    },
-    {
-      name = "rdp"
-    }
-  ]
+#   # Dynamic Block -- v3
+#   # list to reference rule names   
+#   predefined_rules = [
+#     {
+#       name = "http"
+#     },
+#     {
+#       name = "https"
+#     },
+#     {
+#       name = "rdp"
+#     }
+#   ]
 
 
 
-  ## TF V0.13 allows Count/For_each in modules which makes interating more efficient for multiple rules 
-  count                 = length(var.predefined_rules)
-  rule_name             = lookup(var.predefined_rules[count.index], "name")
-  rule_priorty          = lookup(var.predefined_rules[count.index], "name")
-  rule_direction        = lookup(var.predefined_rules[count.index], "name")
-  rule_access           = lookup(var.predefined_rules[count.index], "name")
-  rule_protocol         = lookup(var.predefined_rules[count.index], "name")
-  rule_source_port      = lookup(var.predefined_rules[count.index], "name")
-  rule_destination_port = lookup(var.predefined_rules[count.index], "name")
-  rule_source_ip        = lookup(var.predefined_rules[count.index], "name")
-  rule_destination_ip   = lookup(var.predefined_rules[count.index], "name")
+#   ## TF V0.13 allows Count/For_each in modules which makes interating more efficient for multiple rules 
+#   count                 = length(var.predefined_rules)
+#   rule_name             = lookup(var.predefined_rules[count.index], "name")
+#   rule_priorty          = lookup(var.predefined_rules[count.index], "name")
+#   rule_direction        = lookup(var.predefined_rules[count.index], "name")
+#   rule_access           = lookup(var.predefined_rules[count.index], "name")
+#   rule_protocol         = lookup(var.predefined_rules[count.index], "name")
+#   rule_source_port      = lookup(var.predefined_rules[count.index], "name")
+#   rule_destination_port = lookup(var.predefined_rules[count.index], "name")
+#   rule_source_ip        = lookup(var.predefined_rules[count.index], "name")
+#   rule_destination_ip   = lookup(var.predefined_rules[count.index], "name")
 
-}
+# }

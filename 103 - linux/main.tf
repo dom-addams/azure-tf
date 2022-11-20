@@ -5,7 +5,7 @@ resource "azurerm_network_interface" "linux_nic" {
 
   ip_configuration {
     name                          = "linux-configuration"
-    subnet_id                     = "/subscriptions/11794cc4-3bda-42e0-b5ef-86356d008ba3/resourceGroups/terraform-resources-rg/providers/Microsoft.Network/virtualNetworks/my-virtual-network/subnets/internal-resources"
+    subnet_id                     = ""
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -22,7 +22,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("/Users/dominicaddams/Documents/Course Code/103 - linux/public.pub")
+    public_key = file("")
   }
 
   os_disk {

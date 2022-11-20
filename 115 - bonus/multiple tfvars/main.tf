@@ -1,9 +1,3 @@
-# Provider
-provider "azurerm" {
-  version = "2.38.0"
-  features {}
-}
-
 resource "azurerm_virtual_network" "virtual_network" {
   name                = var.myname
   address_space       = var.range //["10.0.0.0/16"]

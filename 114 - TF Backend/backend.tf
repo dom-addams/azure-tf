@@ -1,8 +1,8 @@
 terraform {
   cloud {
-      organization = "DMD-Development"
+      organization = ""
       workspaces {
-          name = "terraform-resource"
+          name = ""
       }
   }
 }
@@ -18,6 +18,6 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "11794cc4-3bda-42e0-b5ef-86356d008ba3"
-  tenant_id = "a41d2b60-8f4c-4718-9186-26e07129e3ea"
+  subscription_id = ""
+  tenant_id = ""
 }

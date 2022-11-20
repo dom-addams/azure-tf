@@ -5,7 +5,7 @@ resource "azurerm_network_interface" "windows_nic" {
 
   ip_configuration {
     name                          = "windows-configuration"
-    subnet_id                     = "/subscriptions/11794cc4-3bda-42e0-b5ef-86356d008ba3/resourceGroups/terraform-resources-rg/providers/Microsoft.Network/virtualNetworks/my-virtual-network/subnets/internal-resources"
+    subnet_id                     = ""
     private_ip_address_allocation = "Dynamic"
   }
 }

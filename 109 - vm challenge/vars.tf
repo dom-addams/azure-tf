@@ -13,11 +13,11 @@ variable "allocation" {
 }
 
 variable "direction_in" {
-  default = "inbound"
+  default = "Inbound"
 }
 
 variable "direction_out" {
-  default = "outbound"
+  default = "Outbound"
 }
 
 variable "traffic_allowed" {
